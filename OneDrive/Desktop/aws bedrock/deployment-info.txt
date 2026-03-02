@@ -1,0 +1,25 @@
+﻿AI Assistant Deployment Information
+====================================
+
+Deployment Date: 02/27/2026 20:41:20
+Environment: production
+Region: us-east-1
+Stack Name: ai-assistant-stack
+
+API Endpoint: https://mj24d4woxk.execute-api.us-east-1.amazonaws.com/production/generate
+S3 Bucket: ai-assistant-responses-335660922845
+Lambda Function ARN: arn:aws:lambda:us-east-1:335660922845:function:ai-assistant-function
+
+PowerShell Test Command:
+$body = @{
+    user_input = "What is Python?"
+    response_type = "general"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "https://mj24d4woxk.execute-api.us-east-1.amazonaws.com/production/generate" -Method Post -Body $body -ContentType "application/json"
+
+Curl Test Command:
+curl -X POST https://mj24d4woxk.execute-api.us-east-1.amazonaws.com/production/generate \
+  -H "Content-Type: application/json" \
+  -d '{\"user_input\": \"What is Python?\", \"response_type\": \"general\"}'
+

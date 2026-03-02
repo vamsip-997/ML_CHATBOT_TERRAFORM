@@ -1,0 +1,62 @@
+# Lambda deployment artifacts
+lambda_deployment/
+lambda_package/
+lambda_function.zip
+*.zip
+
+# Generated blog files
+blog_*.txt
+blog_*.html
+blog_*.md
+demo_blog_*.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# AWS
+.aws/
+*.pem
+trust-policy.json
+s3-policy.json
+response.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

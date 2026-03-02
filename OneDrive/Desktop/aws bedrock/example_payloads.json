@@ -1,0 +1,21 @@
+{
+  "text_format_example": {
+    "body": "{\"blog_topic\": \"Artificial Intelligence in Healthcare\", \"word_count\": 200, \"output_format\": \"text\"}"
+  },
+  
+  "html_format_example": {
+    "body": "{\"blog_topic\": \"Cloud Computing Best Practices\", \"word_count\": 300, \"output_format\": \"html\"}"
+  },
+  
+  "markdown_format_example": {
+    "body": "{\"blog_topic\": \"The Future of Machine Learning\", \"word_count\": 250, \"output_format\": \"markdown\"}"
+  },
+  
+  "short_blog_example": {
+    "body": "{\"blog_topic\": \"Cybersecurity Tips\", \"word_count\": 100, \"output_format\": \"text\"}"
+  },
+  
+  "long_blog_example": {
+    "body": "{\"blog_topic\": \"Comprehensive Guide to DevOps\", \"word_count\": 500, \"output_format\": \"markdown\"}"
+  }
+}

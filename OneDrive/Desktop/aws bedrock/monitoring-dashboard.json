@@ -1,0 +1,103 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          [ "AWS/Lambda", "Invocations", { "stat": "Sum", "label": "Total Invocations" } ],
+          [ ".", "Errors", { "stat": "Sum", "label": "Errors", "color": "#d62728" } ],
+          [ ".", "Throttles", { "stat": "Sum", "label": "Throttles", "color": "#ff7f0e" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "title": "Lambda Function Metrics",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "label": "Count",
+            "showUnits": false
+          }
+        }
+      }
+    },
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          [ "AWS/Lambda", "Duration", { "stat": "Average", "label": "Average Duration" } ],
+          [ "...", { "stat": "Maximum", "label": "Max Duration" } ],
+          [ "...", { "stat": "p99", "label": "P99 Duration" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "title": "Lambda Duration",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "label": "Milliseconds",
+            "showUnits": false
+          }
+        }
+      }
+    },
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          [ "AWS/Lambda", "ConcurrentExecutions", { "stat": "Maximum", "label": "Concurrent Executions" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "title": "Concurrent Executions",
+        "period": 300
+      }
+    },
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          [ "AWS/ApiGateway", "Count", { "stat": "Sum", "label": "API Requests" } ],
+          [ ".", "4XXError", { "stat": "Sum", "label": "4XX Errors", "color": "#ff7f0e" } ],
+          [ ".", "5XXError", { "stat": "Sum", "label": "5XX Errors", "color": "#d62728" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "title": "API Gateway Metrics",
+        "period": 300
+      }
+    },
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          [ "AWS/ApiGateway", "Latency", { "stat": "Average", "label": "Average Latency" } ],
+          [ "...", { "stat": "p99", "label": "P99 Latency" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "title": "API Gateway Latency",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "label": "Milliseconds",
+            "showUnits": false
+          }
+        }
+      }
+    },
+    {
+      "type": "log",
+      "properties": {
+        "query": "SOURCE '/aws/lambda/ai-assistant-function'\n| fields @timestamp, @message\n| filter @message like /ERROR/\n| sort @timestamp desc\n| limit 20",
+        "region": "us-east-1",
+        "title": "Recent Errors",
+        "stacked": false
+      }
+    }
+  ]
+}
